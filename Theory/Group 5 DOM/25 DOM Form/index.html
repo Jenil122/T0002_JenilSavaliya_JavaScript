@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Form</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="section">
+      <h1>Registration Form</h1>
+      <form action="#" method="get" class="form" name="form">
+        <label for="fName"
+          >FirstName: <input type="text" id="fName" name="fname"
+        /></label>
+        <label for="lName"
+          >LastName: <input type="text" name="lName" id="lname"
+        /></label>
+        <label for="age"
+          >Age: <input type="number" name="age" id="age"
+        /></label>
+        <label for="email"
+          >Email: <input type="email" name="email" id="email"
+        /></label>
+        <label for="gender"
+          >Gender:
+          <div class="gender">
+            <input type="radio" name="gender" />Male
+            <input type="radio" name="gender" />Female
+          </div>
+        </label>
+
+        <label for="select"
+          >Country:
+          <select name="select" id="select">
+            <option value="-">Select</option>
+            <option value="1">India</option>
+            <option value="2">USA</option>
+            <option value="3">Europ</option>
+            <option value="4">Rasia</option>
+          </select>
+        </label>
+        <label for="checkbox" class="check-techno"
+          >Hobbies:
+          <div class="checkbox">
+            <label for="checkbox"
+              ><input type="checkbox" name="" id="1" />Reading</label
+            >
+            <label for="checkbox"
+              ><input type="checkbox" name="" id="2" />Traveling</label
+            >
+            <label for="checkbox"
+              ><input type="checkbox" name="" id="3" />Coding</label
+            >
+            <label for="checkbox"
+              ><input type="checkbox" name="" id="4" />Sport</label
+            >
+          </div>
+        </label>
+        <label for="password"
+          >Password: <input type="password" name="password" id="password"
+        /></label>
+        <label for="cpassword"
+          >Conform Password:
+          <input type="password" name="cpassword" id="cpassword"
+        /></label>
+        <input id="btn" type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

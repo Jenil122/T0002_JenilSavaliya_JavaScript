@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+h1 {
+  margin: 2rem;
+}
+
+label {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.check-techno {
+  display: flex;
+  justify-content: space-between;
+}
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin: auto;
+  margin-top: 1rem;
+  padding: 0.4rem 1.5rem;
+}
+
+.gender {
+  padding: 0 2rem;
+}
+
+.gender input[type="radio"] {
+  margin: 0.4rem;
+}
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+}
+label select {
+  padding: 0.3rem 2rem;
+  border: none;
+  border-radius: 10px;
+}
