@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#show {
+  display: grid;
+  gap: 20px;
+}
+
+#api1Data,
+#api2Data,
+#api3Data {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#api1Data p,
+#api2Data p,
+#api3Data p {
+  margin: 5px 0;
+}
+
+#api1Data {
+  background-color: #f7f7f7;
+}
+
+#api2Data {
+  background-color: #e7f3fe;
+}
+
+#api3Data {
+  background-color: #f8e9e9;
+}
