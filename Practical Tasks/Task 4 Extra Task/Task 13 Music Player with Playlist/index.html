@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player with Playlist</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Music Player with Playlist</h1>
+    </div>
+
+    <div class="containerAudio">
+      <div class="container">
+        <div class="title">
+          <h3 class="titleHeading"></h3>
+        </div>
+        <div class="artist">
+          <p class="artistHeading"></p>
+        </div>
+        <div class="audioDiv">
+          <audio controls id="audio"></audio>
+        </div>
+        <div class="btn">
+          <button id="previous">Previous</button>
+          <button id="next">Next</button>
+          <button id="shuffle">Shuffle</button>
+        </div>
+        <button class="playlistButton">Playlist</button>
+      </div>
+      <div class="playlistContainer">
+        <div class="search" style="display: none">
+          <input type="text" placeholder="Enter the img URL" id="imgURL" />
+          <input type="text" placeholder="Enter the title" id="title" />
+          <input type="text" placeholder="Enter the artist" id="artist" />
+          <input type="text" placeholder="Enter the audio URL" id="audioURL" />
+          <button class="addPlaylist">Add</button>
+        </div>
+        <div class="playlistData"></div>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
