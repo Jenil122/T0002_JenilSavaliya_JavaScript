@@ -1,0 +1,43 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.inputDiv,
+.filterDiv {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: calc(100% - 100px);
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px;
+  margin: 2px;
+}
+
+.addToDoList > div {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.addToDoList p {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.addToDoList input[type="checkbox"] {
+  margin-right: 10px;
+}
