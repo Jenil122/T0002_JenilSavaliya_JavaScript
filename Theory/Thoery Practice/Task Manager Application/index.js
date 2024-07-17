@@ -1,107 +1,88 @@
 const addButton = document.querySelector(".addButton");
 const removeAll = document.querySelector(".removeAll");
 const addToDoList = document.querySelector(".addToDoList");
-const filter = document.getElementById("filter");
-const editButton = document.querySelector(".editButton");
+const filterSelect = document.getElementById("filter");
 
-let editIndex = null;
+let arr = [];
 
 addButton.addEventListener("click", () => {
   const input = document.getElementById("input");
-  if (input.value !== "") {
-    addTask(input.value);
-    input.value = "";
-  } else {
-    alert("Please enter a To-Do");
-  }
-});
 
-editButton.addEventListener("click", () => {
-  const input = document.getElementById("input");
-  if (input.value !== "" && editIndex !== null) {
-    updateTask(editIndex, input.value);
+  if (input.value !== "") {
+    const todo = {
+      text: input.value,
+      completed: false,
+    };
+
+    arr.push(todo);
+    renderList();
+
     input.value = "";
-    editIndex = null;
-    toggleEditMode(false);
   } else {
-    alert("Please enter a To-Do");
+    alert("Please enter the ToDo");
   }
 });
 
 removeAll.addEventListener("click", () => {
+  arr = [];
+  renderList();
+});
+
+filterSelect.addEventListener("change", renderList);
+
+function renderList() {
   addToDoList.innerHTML = "";
-});
 
-filter.addEventListener("change", () => {
-  filterTasks();
-});
+  let filteredArr = arr;
+  if (filterSelect.value === "completed") {
+    filteredArr = arr.filter((todo) => todo.completed);
+  } else if (filterSelect.value === "incomplete") {
+    filteredArr = arr.filter((todo) => !todo.completed);
+  }
 
-function addTask(text) {
-  const div = document.createElement("div");
-  const p = document.createElement("p");
-  const checkbox = document.createElement("input");
-  const edit = document.createElement("button");
-  const remove = document.createElement("button");
+  filteredArr.forEach((todo, index) => {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const edit = document.createElement("button");
+    const remove = document.createElement("button");
+    const checkbox = document.createElement("input");
+    const editIndivial = document.querySelector(".editIndivial");
 
-  checkbox.type = "checkbox";
-  checkbox.classList.add("checkbox");
-  checkbox.addEventListener("change", () => {
-    if (checkbox.checked) {
-      p.classList.add("completed");
-    } else {
-      p.classList.remove("completed");
+    checkbox.type = "checkbox";
+    checkbox.checked = todo.completed;
+    checkbox.addEventListener("change", () => {
+      todo.completed = checkbox.checked;
+      renderList();
+    });
+
+    p.innerHTML = todo.text;
+    if (todo.completed) {
+      p.style.textDecoration = "line-through";
     }
-    filterTasks();
-  });
+    edit.innerHTML = "Edit";
+    remove.innerHTML = "Remove";
 
-  p.innerHTML = text;
-  edit.innerHTML = "Edit";
-  edit.classList.add("editButton");
-  edit.addEventListener("click", () => {
-    document.getElementById("input").value = p.innerHTML;
-    editIndex = Array.from(addToDoList.children).indexOf(div);
-    toggleEditMode(true);
-  });
+    div.appendChild(checkbox);
+    div.appendChild(p);
+    div.appendChild(edit);
+    div.appendChild(remove);
+    addToDoList.appendChild(div);
 
-  remove.innerHTML = "Remove";
-  remove.classList.add("removeButton");
-  remove.addEventListener("click", () => {
-    div.remove();
-  });
-
-  div.appendChild(checkbox);
-  div.appendChild(p);
-  div.appendChild(edit);
-  div.appendChild(remove);
-  addToDoList.appendChild(div);
-  filterTasks();
-}
-
-function updateTask(index, newText) {
-  const task = addToDoList.children[index];
-  const p = task.querySelector("p");
-  p.innerHTML = newText;
-}
-
-function toggleEditMode(editMode) {
-  addButton.style.display = editMode ? "none" : "inline-block";
-  editButton.style.display = editMode ? "inline-block" : "none";
-}
-
-function filterTasks() {
-  const tasks = Array.from(addToDoList.children);
-  tasks.forEach((task) => {
-    const checkbox = task.querySelector(".checkbox");
-    switch (filter.value) {
-      case "completed":
-        task.style.display = checkbox.checked ? "flex" : "none";
-        break;
-      case "incomplete":
-        task.style.display = !checkbox.checked ? "flex" : "none";
-        break;
-      default:
-        task.style.display = "flex";
-        break;
-    }
+    edit.onclick = () => {
+      editIndivial.style.display = "inline-block";
+      addButton.style.display = "none";
+      input.value = todo.text;
+      editIndivial.onclick = () => {
+        todo.text = input.value;
+        renderList();
+        addButton.style.display = "inline-block";
+        editIndivial.style.display = "none";
+        input.value = "";
+      };
+    };
+    remove.onclick = () => {
+      arr.splice(index, 1);
+      renderList();
+    };
   });
 }
