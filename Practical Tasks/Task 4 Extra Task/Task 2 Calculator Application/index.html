@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Application</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+        <h1>Calculator Application</h1>
+    </div>
+    <div id="search">
+        <input type="number" id="first" onchange="calculator()" placeholder="Enter the first value">
+        <input type="number" id="second" onchange="calculator()" placeholder="Enter the second value">
+    </div>
+    <div>
+        <button onclick="plus()" class="btn">Plus</button>
+        <button onclick="minus()" class="btn">Minus</button>
+        <button onclick="multi()" class="btn">Multiplication</button>
+        <button onclick="divison()" class="btn">Divison</button>
+    </div>
+    <div id="showData"></div>
+</body>
+<script src="./index.js"></script>
+</html>
