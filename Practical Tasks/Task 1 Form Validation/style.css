@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  width: inherit;
+  height: inherit;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.heading {
+  margin-bottom: 1rem;
+  font-family: "Playwrite GB S", cursive;
+}
+
+form {
+  width: 45rem;
+  height: 62rem;
+  gap: 4.2rem;
+  border: 2px solid black;
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  font-family: "Playwrite GB S", cursive;
+}
+
+form label {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+form input {
+  width: 40rem;
+  height: 4rem;
+  padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+  font-size: 1.5rem;
+  outline: none;
+  font-family: "Playwrite GB S", cursive;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.error {
+  width: 40rem;
+  color: red;
+  font-size: 1.4rem;
+  height: 3rem;
+}
+
+.btn {
+  padding: 0.5rem 4.5rem;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  outline: none;
+  font-family: "Playwrite GB S", cursive;
+}
