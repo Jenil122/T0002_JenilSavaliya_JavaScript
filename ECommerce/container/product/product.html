@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Pages</title>
+    <link rel="stylesheet" href="../header/header.css" />
+    <link rel="stylesheet" href="./products.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="navigate"></div>
+    </div>
+    <div class="container">
+      <div class="product-top">
+        <label for="productBrand">
+          <select id="productBrand">
+            <option value="all">All</option>
+            <option value="puma">Puma</option>
+            <option value="Nike">Nike</option>
+            <option value="Asian">Asian</option>
+            <option value="Reebok">Reebok</option>
+          </select>
+        </label>
+        <label for="productMaterial">
+          <select id="productMaterial">
+            <option value="all">All</option>
+            <option value="Synthetic">Synthetic</option>
+            <option value="Leather">Leather</option>
+            <option value="Mesh">Mesh</option>
+          </select>
+        </label>
+        <label for="productPrice">
+          <select id="productPrice">
+            <option value="all">All</option>
+            <option value="lowToHigh">Low to High</option>
+            <option value="highToLow">High to Low</option>
+          </select>
+        </label>
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="product-bottom"></div>
+    </div>
+  </body>
+  <script src="./product.js"></script>
+  <script src="../header/header.js"></script>
+</html>

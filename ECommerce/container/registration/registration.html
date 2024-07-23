@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="./registration.css" />
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="heading">
+        <h1>Registration Form</h1>
+      </div>
+      <div class="register-container flex">
+        <div class="registrationFormData">
+          <form action="" id="registrationForm" class="flex">
+            <div class="name">
+              <label for="registrationName">
+                <input
+                  type="text"
+                  id="registrationName"
+                  placeholder="Enter the Name"
+                />
+              </label>
+              <div class="usernameError"></div>
+            </div>
+            <div class="email">
+              <label for="registrationEmail">
+                <input
+                  type="email"
+                  id="registrationEmail"
+                  placeholder="Enter the Email"
+                />
+              </label>
+              <div class="emailError"></div>
+            </div>
+
+            <div class="mobile">
+              <label for="registrationMobileNumber">
+                <input
+                  type="number"
+                  id="registrationMobileNumber"
+                  placeholder="Enter the Mobile no"
+                />
+              </label>
+              <div class="mobileNumberError"></div>
+            </div>
+
+            <div class="address">
+              <label for="registrationAddress">
+                <textarea
+                  id="registrationAddress"
+                  placeholder="Enter the Address"
+                ></textarea>
+              </label>
+            </div>
+            <div class="password">
+              <label for="registrationPassword">
+                <input
+                  type="password"
+                  id="registrationPassword"
+                  placeholder="Enter the Password"
+                />
+              </label>
+              <div class="passwordError"></div>
+            </div>
+            <button id="registrationBtn" class="btn">Registration</button>
+          </form>
+        </div>
+        <div class="login-links">
+          <a href="../login/login.html">Login</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./registration.js"></script>
+</html>
